@@ -1,0 +1,4 @@
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"]
+}
+// This is a Babel configuration file that specifies the presets to be used.
