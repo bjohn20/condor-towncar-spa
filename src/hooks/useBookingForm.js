@@ -1,0 +1,36 @@
+import { useState } from "react";
+
+export const useBookingForm = () => {
+  // State to track the selected pick-up and drop-off locations
+  const [pickup, setPickup] = useState(""); // State to track pick-up location (if needed)
+  const [dropoff, setDropoff] = useState(""); // State to track drop-off location (if needed)
+
+  // State to track pick-up date and time
+  const [pickupDate, setPickupDate] = useState("");
+  const [pickupTime, setPickupTime] = useState("");
+
+  // State to track availability
+  const [isAvailable, setIsAvailable] = useState(null);
+
+  // State to track number of passengers
+  const [passengers, setPassengers] = useState(1);
+
+  const [serviceType, setServiceType] = useState("Standard"); // State to track service type (if needed)
+
+  return {
+    pickup,
+    setPickup,
+    dropoff,
+    setDropoff,
+    pickupDate,
+    setPickupDate,
+    pickupTime,
+    setPickupTime,
+    isAvailable,
+    setIsAvailable,
+    passengers,
+    setPassengers,
+    serviceType,
+    setServiceType,
+  };
+};

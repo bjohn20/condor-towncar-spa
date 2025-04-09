@@ -1,46 +1,46 @@
-/* Navbar Styles */
-nav {
-  background-color: #1a1a1a;
-  padding: 1rem 2rem;
+/* Ensure the navbar has a dark background and white text */
+header.navbar-dark {
+  background-color: #1a1a1a; /* Dark background color */
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  margin: 0;
-}
-
-nav a {
-  text-decoration: none;
+/* Navbar brand (logo) - white text */
+header nav .navbar-brand {
   color: #fff;
   font-weight: bold;
-  font-size: 1rem;
+}
+
+/* Hover effect for the navbar brand */
+header nav .navbar-brand:hover {
+  color: #f0c040; /* Gold color on hover */
+}
+
+/* Navbar links - white text */
+header nav .nav-link {
+  color: #fff;
+  font-weight: bold;
   text-transform: uppercase;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 4px;
 }
 
-nav a:hover {
-  color: #f0c040;
-  border-bottom: 2px solid #f0c040;
+/* Hover effect for links */
+header nav .nav-link:hover {
+  color: #f0c040; /* Gold color on hover */
 }
 
-/* Responsive - Stack items vertically on smaller screens */
+/* Active link styling */
+header nav .nav-link.active {
+  color: #f0c040; /* Gold color for active links */
+}
+
+/* Adjust the navbar for smaller screens */
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+  header nav .navbar-toggler {
+    border-color: #f0c040; /* Gold border for the toggler */
+  }
+
+  header nav .navbar-toggler-icon {
+    background-color: #f0c040; /* Gold icon for the toggler */
   }
 }

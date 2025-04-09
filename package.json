@@ -8,6 +8,7 @@
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^14.6.1",
     "axios": "^1.8.4",
+    "bootstrap": "^5.3.5",
     "css-loader": "^7.1.2",
     "date-fns": "^4.1.0",
     "react": "^19.0.0",
