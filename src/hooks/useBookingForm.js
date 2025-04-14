@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { handleSubmit } from "../utils/bookingUtils";
 
 export const useBookingForm = () => {
   // State to track the selected pick-up and drop-off locations
@@ -17,6 +18,21 @@ export const useBookingForm = () => {
 
   const [serviceType, setServiceType] = useState("Standard"); // State to track service type (if needed)
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+
+    const bookingData = {
+      pickup: pickup,
+      dropoff: dropoff,
+      pickupDate: pickupDate,
+      pickupTime: pickupTime,
+      serviceType: serviceType,
+      passengers: passengers,
+    };
+
+    handleSubmit(bookingData, setIsAvailable); // Call the handleSubmit function with the booking data
+  };
+
   return {
     pickup,
     setPickup,
@@ -32,5 +48,6 @@ export const useBookingForm = () => {
     setPassengers,
     serviceType,
     setServiceType,
+    handleFormSubmit,
   };
 };

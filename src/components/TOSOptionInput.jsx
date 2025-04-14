@@ -10,9 +10,16 @@ const TOSOptionInput = ({ label, id, value, onChange }) => {
       </label>
       <select
         className="form-select"
-        id="serviceType"
-        aria-label="Default select example"
+        id={id}
+        value={value}
+        onChange={onChange}
+        aria-label="Type of Service"
         required>
+        <option
+          value=""
+          disabled>
+          Select type of service
+        </option>
         <option value="Standard">Standard</option>
         <option value="Airport Transfer">Airport Transfer</option>
         <option value="Hourly">Hourly</option>

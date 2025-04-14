@@ -1,11 +1,6 @@
 import React from "react";
 
 const TimeInput = ({ label, id, value, onChange }) => {
-  const handleChange = (e) => {
-    console.log("Received Event:", e);
-    onChange(e); // Call the passed down handler
-  };
-
   return (
     <div className="col-md-6 text-md-end">
       <div className="form-fs-lg form-control-transparent">
@@ -15,10 +10,10 @@ const TimeInput = ({ label, id, value, onChange }) => {
           {label}
         </label>
         <input
-          type="text"
+          type="time"
           value={value}
-          onChange={handleChange}
-          className="form-control flatpickr flatpickr-input text-md-end"
+          onChange={(e) => onChange(e.target.value)}
+          className="form-control text-md-end"
           data-enable-time="true"
           data-no-calendar="true"
           placeholder="Select time"

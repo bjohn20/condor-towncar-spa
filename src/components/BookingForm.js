@@ -3,10 +3,8 @@ import DateInput from "./DateInput";
 import TOSOptionInput from "./TOSOptionInput";
 import TimeInput from "./TimeInput";
 
-import { checkAvailability } from "../utils/bookingUtils";
-import { handleTimeChange } from "../utils/bookingUtils";
+// import { handleTimeChange } from "../utils/bookingUtils";
 import { handleServiceTypeChange } from "../utils/bookingUtils";
-import { handleSubmit } from "../utils/bookingUtils";
 
 import { useBookingForm } from "../hooks/useBookingForm";
 
@@ -21,37 +19,20 @@ const BookingForm = () => {
     pickupTime,
     setPickupTime,
     isAvailable,
-    setIsAvailable,
     passengers,
     setPassengers,
     serviceType,
     setServiceType,
+    handleFormSubmit,
   } = useBookingForm();
 
   // Function to handle time change
-  handleTimeChange(setPickupTime);
-
-  // Function to handle service type change
-  handleServiceTypeChange(setServiceType);
-
-  // Function to handle form submission
-  checkAvailability({ setIsAvailable });
-
-  // Function to check availability when the form is submitted
-  handleSubmit(
-    pickup,
-    dropoff,
-    pickupDate,
-    pickupTime,
-    serviceType,
-    passengers,
-    isAvailable
-  );
+  // handleTimeChange(setPickupTime);
 
   return (
     // Card component for the booking form starts here
     <form
-      onSubmit={handleSubmit}
+      onSubmit={handleFormSubmit}
       className="card-body form-control-border p-3 p-sm-4">
       {/* Tabs Start */}
       <div
@@ -117,7 +98,7 @@ const BookingForm = () => {
             {/* Type of Service */}
             <TOSOptionInput
               value={serviceType}
-              onChange={(e) => handleServiceTypeChange(e, setServiceType)}
+              onChange={handleServiceTypeChange(setServiceType)}
             />
             {/* <!-- Pickup --> */}
             <div className="col-md-6 position-relative">
@@ -153,7 +134,7 @@ const BookingForm = () => {
               label={"Pickup Time"}
               id={"pickupTime"}
               value={pickupTime}
-              onChange={(e) => handleTimeChange(e, setPickupTime)}
+              onChange={(value) => setPickupTime(value)}
             />
           </div>
         </div>
